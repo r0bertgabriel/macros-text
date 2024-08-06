@@ -1,6 +1,6 @@
 # Clean Text Clipboard
 
-This project provides a Python script that cleans text from the clipboard by removing unnecessary spaces from text extracted from PDFs. The goal is to make it easier to handle pasted text from PDFs, making it more readable and ready for use in other applications.
+This project provides a Python script that cleans text from the clipboard by removing unnecessary spaces from text extracted from PDFs (principally but not exclusively). The goal is to make it easier to handle pasted text, making it more readable and ready for use in other applications.
 
 ## Description
 
