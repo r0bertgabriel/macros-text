@@ -20,21 +20,24 @@ Make sure you have the following prerequisites installed on your system:
    ```bash
    git clone https://github.com/your-username/clean-text-clipboard.git
    cd clean-text-clipboard
+   ```
 
 2. **Make the script executable:**
    ```bash
    xclip -o | python3 clean_text.py | xclip -selection clipboard
    ```
+
 3. **Usage**
 
 3.1. Copy the text you want to clean to the clipboard.
 3.2. Run the script manually:
 
-    ```bash
+   ```bash
    xclip -o | python3 clean_text.py | xclip -selection clipboard
-      ```
+   ```
 or configure a shortcut in i3wm to run the script with a command:
-   ```plaintext
+   
+```bash
    bindsym $mod+Shift+c exec "xclip -o | python3 /path/to/clean_text.py | xclip -selection clipboard"
    ```
 
