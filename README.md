@@ -44,9 +44,10 @@ Make sure you have the following prerequisites installed on your system:
 
    ```bash
 xclip -o | python3 clean_text.py | xclip -selection clipboard
-   ```
-or set up a shortcut in i3wm to run the script with a command (example):
-   
+   ``` 
+
+or set up a shortcut. In this case, I will use an example for the i3wm `config` file to run the script with an example command:
+    
 ```bash
 bindsym $mod+Shift+ç exec "xclip -o | python3 /path/to/clean_text.py | xclip -selection clipboard"
    ```
