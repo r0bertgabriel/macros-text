@@ -2,7 +2,7 @@
 
 This project provides a Python script that cleans text from the clipboard by removing unnecessary spaces from text extracted from PDFs (principally but not exclusively). The goal is to make it easier to handle pasted text, making it more readable and ready for use in other applications.
 
----
+
 
 ## Description
 
@@ -27,13 +27,13 @@ Make sure you have the following prerequisites installed on your system:
    git clone https://github.com/your-username/clean-text-clipboard.git
    cd clean-text-clipboard
    ```
----
+
 
 2. **Make the script executable:**
    ```bash
    xclip -o | python3 clean_text.py | xclip -selection clipboard
    ```
----
+
 
 3. **Usage**
 
