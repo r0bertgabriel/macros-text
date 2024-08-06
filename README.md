@@ -33,7 +33,7 @@ Make sure you have the following prerequisites installed on your system:
 3.2. Run the script manually:
 
    ```bash
-   xclip -o | python3 clean_text.py | xclip -selection clipboard
+xclip -o | python3 clean_text.py | xclip -selection clipboard
    ```
 or configure a shortcut in i3wm to run the script with a command:
    
@@ -59,7 +59,8 @@ Fork the repository
 
 For more information, please contact:
 
-   Email: robertdsgabriel@gmail.com
-   GitHub: [r0bert](https://github.com/r0bertds)
+- Email: robertdsgabriel@gmail.com
+  
+- GitHub: [r0bert](https://github.com/r0bertds)
 
 
