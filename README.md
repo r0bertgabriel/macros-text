@@ -39,6 +39,7 @@ Make sure you have the following prerequisites installed on your system:
 3. **Usage**
 
 3.1. Copy the text you want to clean to the clipboard.
+
 3.2. Run the script manually:
 
    ```bash
