@@ -38,7 +38,7 @@ xclip -o | python3 clean_text.py | xclip -selection clipboard
 or configure a shortcut in i3wm to run the script with a command:
    
 ```bash
-   bindsym $mod+Shift+c exec "xclip -o | python3 /path/to/clean_text.py | xclip -selection clipboard"
+bindsym $mod+Shift+c exec "xclip -o | python3 /path/to/clean_text.py | xclip -selection clipboard"
    ```
 
 Paste the cleaned text wherever you need.
