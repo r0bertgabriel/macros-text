@@ -22,21 +22,21 @@ Make sure you have the following prerequisites installed on your system:
    cd clean-text-clipboard
 
 2. **Make the script executable:**
-```bash
-xclip -o | python3 clean_text.py | xclip -selection clipboard
-```
+   ```bash
+   xclip -o | python3 clean_text.py | xclip -selection clipboard
+   ```
 3. **Usage**
 
 3.1. Copy the text you want to clean to the clipboard.
 3.2. Run the script manually:
 
- ```bash
-xclip -o | python3 clean_text.py | xclip -selection clipboard
-```
+    ```bash
+   xclip -o | python3 clean_text.py | xclip -selection clipboard
+   ```
 **or configure a shortcut in i3wm to run the script with a command:**
-```plaintext
-bindsym $mod+Shift+c exec "xclip -o | python3 /path/to/clean_text.py | xclip -selection clipboard"
-```
+   ```plaintext
+   bindsym $mod+Shift+c exec "xclip -o | python3 /path/to/clean_text.py | xclip -selection clipboard"
+   ```
 
 Paste the cleaned text wherever you need.
 
@@ -56,7 +56,7 @@ Fork the repository
 
 For more information, please contact:
 
-    Email: robertdsgabriel@gmail.com
-    GitHub: [r0bert](https://github.com/r0bertds)
+   Email: robertdsgabriel@gmail.com
+   GitHub: [r0bert](https://github.com/r0bertds)
 
 
