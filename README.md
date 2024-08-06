@@ -31,7 +31,8 @@ Make sure you have the following prerequisites installed on your system:
 
 2. **Make the script executable:**
    ```bash
-   xclip -o | python3 clean_text.py | xclip -selection clipboard
+   chmod +x clean_text.py
+
    ```
 
 
