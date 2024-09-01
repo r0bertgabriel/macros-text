@@ -88,7 +88,7 @@ if __name__ == "__main__":
 
 ## Contact
 
-For more information, please contact:
+Para mais informações, entre em contato:
 
 - Email: robertgabriel@disroot.org
     Fingerprint(chave_pública): C338 1F7C 6868 4B8F 32DE 779D FD05 CAA1 356F 34B5
