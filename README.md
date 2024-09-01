@@ -1,60 +1,95 @@
-# Clean Text Clipboard
-
-This project provides a Python script that cleans text from the clipboard by removing unnecessary spaces from text extracted from PDFs (principally but not exclusively). The goal is to make it easier to handle pasted text, making it more readable and ready for use in other applications.
-
-
-
-## Description
-
-`clean_text.py` is a simple script that uses `xclip` to get text from the clipboard, cleans unnecessary spaces, and puts the cleaned text back into the clipboard. This script is especially useful for those working with text extracted from PDFs who want to automatically remove unwanted spaces.
-
+# Automações para textos
 ---
 
-## Prerequisites
+## Automação de Macros para Manipulação de Texto
 
-Make sure you have the following prerequisites installed on your system:
+Este repositório contém scripts para automação de tarefas relacionadas à manipulação de texto. Atualmente, há duas automações principais: uma em Shell e outra em Python. Ambas as automações têm como objetivo facilitar e acelerar o trabalho com conteúdo textual.
 
-- Python 3.x
-- xclip
+### 1. Automação em Shell: Seleção e Cópia de Template
 
----
+Este script em Shell foi desenvolvido para selecionar e copiar o conteúdo de um template de texto diretamente para a área de transferência.
 
-## Installation
+#### Funcionamento:
+- *Diretório de Templates*: O script busca os arquivos .txt no diretório ~/scripts/templates.
+- *Seleção de Arquivo*: Utiliza a ferramenta fzf para permitir a seleção interativa de um arquivo.
+- *Cópia de Conteúdo*: Após a seleção, o conteúdo do arquivo escolhido é copiado para a área de transferência usando o xclip.
+- *Confirmação e Fechamento*: O script exibe uma mensagem confirmando a cópia e aguarda o usuário pressionar Enter para fechar o terminal.
 
-1. **Clone the repository:**
+#### Script:
+bash
+#!/bin/bash
 
-   ```bash
-   git clone https://github.com/r0bertds/clean-text-clipboard.git /
-   cd clean-text-clipboard
-   ```
+# Define o diretório onde estão os templates
+TEMPLATE_DIR=~/scripts/templates
+TEMP_FILE=~/scripts/temp_content.txt
+
+# Abre o terminal e executa o script interativo
+gnome-terminal -- bash -c '
+  # Define o diretório onde estão os templates
+  TEMPLATE_DIR=~/scripts/templates
+
+  # Lista os arquivos .txt no diretório e permite a seleção com fzf
+  FILE=$(find "$TEMPLATE_DIR" -name "*.txt" | fzf --prompt="Escolha um arquivo: ")
+
+  # Verifica se a seleção foi cancelada
+  if [ -z "$FILE" ]; então
+    echo "Seleção cancelada."
+    exit 1
+  fi
+
+  # Copia o conteúdo do arquivo escolhido para a área de transferência
+  cat "$FILE" | xclip -selection clipboard
+
+  # Mensagem opcional para confirmar que o conteúdo foi copiado
+  echo "O conteúdo do arquivo $FILE foi copiado para a área de transferência."
+
+  # Mensagem para aguardar o fechamento do terminal
+  echo "Pressione Enter para fechar este terminal."
+
+  # Aguarda o usuário pressionar Enter para fechar o terminal
+  read -r
+'
 
 
-2. **Make the script executable:**
-   ```bash
-   chmod +x clean_text.py
+### 2. Automação em Python: Limpeza de Texto
 
-   ```
+Este script em Python foi criado para limpar e formatar texto de entrada. Ele remove múltiplos espaços e novas linhas, unificando o texto em uma única linha sem quebras desnecessárias.
+
+#### Funcionamento:
+- *Entrada de Texto*: O script lê o texto a partir do stdin.
+- *Limpeza*: Remove múltiplos espaços e novas linhas extras, deixando o texto formatado em uma única linha.
+- *Saída*: O texto limpo é então impresso no stdout.
+
+#### Script:
+python
+import sys
+
+def clean_text(text):
+    # Remove múltiplos espaços e novas linhas extras
+    cleaned_text = ' '.join(text.split())
+    return cleaned_text
+
+if __name__ == "__main__":
+    input_text = sys.stdin.read()
+    print(clean_text(input_text))
 
 
-3. **Usage**
+### Como Usar
 
-3.1. Copy the text you want to clean to the clipboard.
+1. *Automação em Shell*: Execute o script para selecionar um template de texto e copiar seu conteúdo para a área de transferência.
+   - É necessário ter o fzf e xclip instalados no sistema.
 
-3.2. Run the script manually:
+2. *Automação em Python*: Passe o texto que deseja limpar como entrada para o script, que retornará o texto formatado.
+   - Exemplo de uso:
+     bash
+     echo "Texto com   espaços   e   quebras de linha" | python clean_text.py
+     
 
-   ```bash
-xclip -o | python3 clean_text.py | xclip -selection clipboard
-   ``` 
+### Requisitos
 
-or set up a shortcut. In this case, I will use an example for the i3wm `config` file to run the script with an example command:
-    
-```bash
-bindsym $mod+Shift+ç exec "xclip -o | python3 /path/to/clean_text.py | xclip -selection clipboard"
-   ```
+- *Shell Script*: bash, gnome-terminal, fzf, xclip.
+- *Python Script*: Python 3.x.
 
-Paste the cleaned text wherever you need.
-
----
 
 ## Contribution
 
