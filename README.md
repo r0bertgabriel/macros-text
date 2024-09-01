@@ -83,6 +83,7 @@ if __name__ == "__main__":
    - Exemplo de uso:
      bash
      echo "Texto com   espaços   e   quebras de linha" | python clean_text.py
+     ou você pode usar uma macro para executar o script python
      
 
 ## Contact
