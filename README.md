@@ -16,14 +16,14 @@ Este script em Shell foi desenvolvido para selecionar e copiar o conteúdo de um
 - *Confirmação e Fechamento*: O script exibe uma mensagem confirmando a cópia e aguarda o usuário pressionar Enter para fechar o terminal.
 
 #### Script:
-bash
+```bash
 #!/bin/bash
 
 # Define o diretório onde estão os templates
 TEMPLATE_DIR=~/scripts/templates
 TEMP_FILE=~/scripts/temp_content.txt
 
-# Abre o terminal e executa o script interativo
+# Abre o terminal(você pode usar o terminal que desejar, basta mudar o nome abaixo) e executa o script interativo
 gnome-terminal -- bash -c '
   # Define o diretório onde estão os templates
   TEMPLATE_DIR=~/scripts/templates
@@ -49,7 +49,7 @@ gnome-terminal -- bash -c '
   # Aguarda o usuário pressionar Enter para fechar o terminal
   read -r
 '
-
+```
 
 ### 2. Automação em Python: Limpeza de Texto
 
@@ -61,7 +61,7 @@ Este script em Python foi criado para limpar e formatar texto de entrada. Ele re
 - *Saída*: O texto limpo é então impresso no stdout.
 
 #### Script:
-python
+```python
 import sys
 
 def clean_text(text):
@@ -73,7 +73,7 @@ if __name__ == "__main__":
     input_text = sys.stdin.read()
     print(clean_text(input_text))
 
-
+```
 ### Como Usar
 
 1. *Automação em Shell*: Execute o script para selecionar um template de texto e copiar seu conteúdo para a área de transferência.
@@ -85,27 +85,12 @@ if __name__ == "__main__":
      echo "Texto com   espaços   e   quebras de linha" | python clean_text.py
      
 
-### Requisitos
-
-- *Shell Script*: bash, gnome-terminal, fzf, xclip.
-- *Python Script*: Python 3.x.
-
-
-## Contribution
-
-Contributions are welcome! Feel free to open an issue or submit a pull request with improvements and fixes.
-
-Fork the repository
-- Create a branch for your feature or bug fix (git checkout -b feature/MyFeature)
-- Commit your changes (git commit -am 'Added MyFeature')
-- Push to the branch (git push origin feature/MyFeature)
-- Open a Pull Request
-
 ## Contact
 
 For more information, please contact:
 
-- Email: robertdsgabriel@gmail.com
+- Email: robertgabriel@disroot.org
+    Fingerprint(chave_pública): C338 1F7C 6868 4B8F 32DE 779D FD05 CAA1 356F 34B5
   
 - GitHub: [r0bert](https://github.com/r0bertds)
 
