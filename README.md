@@ -1,4 +1,4 @@
-# Automações para textos
+# Readme
 ---
 
 ## Automação de Macros para Manipulação de Texto
